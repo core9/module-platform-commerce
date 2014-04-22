@@ -1,0 +1,23 @@
+<h1 class="page-header">Edit payment method</h1>
+<div class="form-group row">
+  <label class="col-md-2 control-label">Payment method name</label>
+  <div class="col-md-8">
+    <input type="text" ng-model="method.name" class="form-control input-md" />
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-md-2 control-label">Payment method label</label>
+  <div class="col-md-8">
+    <input type="text" ng-model="method.label" class="form-control input-md" />
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-md-2 control-label">Payment method widget</label>
+  <div class="col-md-8">
+    <input type="text" ng-model="method.widget" class="form-control input-md" />
+  </div>
+</div>
+<fieldset>
+  <legend>Actions</legend>
+  <button class="btn btn-success" ng-click="save()">Save</button>
+</fieldset>

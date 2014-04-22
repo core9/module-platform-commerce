@@ -1,0 +1,24 @@
+<h1 class="page-header">Payment methods</h1>
+<table class="table table-striped">
+  <tr>
+    <th>Method</th>
+    <th>Actions</th>
+  </tr>
+  <tr ng-repeat="method in methods">
+    <td>{{method.name}}</td>
+    <td>
+      <button class="btn btn-success" ng-click="edit(method)"><i class="fa fa-cog"></i></button>
+      <button class="btn btn-danger" ng-click="remove(method, $index)"><i class="fa fa-trash-o"></i></button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="form-group">
+        <input ng-model="newName" type="text" placeholder="New payment method name" class="form-control input-md">
+      </div>
+    </td>
+    <td>
+      <button class="btn btn-success" ng-click="add(newName)"><i class="fa fa-plus"></i> New payment method</button>
+    </td>
+  </tr>
+</table>
