@@ -1,0 +1,25 @@
+<div class="row" ng-controller="CommerceHashConfigController">
+  <label class="col-md-2">Enter fieldnames</label>
+  <div class="col-md-8">
+    <table class="table table-striped">
+      <tr>
+        <th>Fieldname</th>
+        <th>Actions</th>
+      </tr>
+      <tr ng-repeat="field in data.fields">
+        <td>{{field}}</td>
+        <td>
+          <button class="btn btn-danger" ng-click="data.fields.splice($index, 1)"><i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" ng-model="newField" />
+        </td>
+        <td>
+          <button class="btn btn-success" ng-click="data.fields.push(newField)">Add field</button>
+        </td>
+      </tr>      
+    <table>
+  </div>
+</div>
