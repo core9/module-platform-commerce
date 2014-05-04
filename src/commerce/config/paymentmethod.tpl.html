@@ -14,7 +14,8 @@
 <div class="form-group row">
   <label class="col-md-2 control-label">Payment method widget</label>
   <div class="col-md-8">
-    <input type="text" ng-model="method.widget" class="form-control input-md" />
+    <select ng-model="method.widget" class="form-control" ng-options="widget._id as widget.name for widget in widgets">
+    </select>
   </div>
 </div>
 <fieldset>

@@ -12,14 +12,18 @@ angular.module('core9Dashboard.commerce.config', [
     }
     $http.post("/admin/commerce_encrypt", fields)
     .success(function (data) {
-      item[$scope.name] = data;
+      item[$scope.name] = {fields: $scope.options.fields, hash: data};
       encryption.resolve();
     });
   });  
 })
 
 .controller("CommerceHashConfigController", function ($scope) {
-  $scope.data.fields = [];
+  $scope.$watch('data.fields', function () {
+    if($scope.data.fields === undefined) {
+      $scope.data.fields = [];
+    }
+  });
 })
 
 .run(function (FieldConfig) {

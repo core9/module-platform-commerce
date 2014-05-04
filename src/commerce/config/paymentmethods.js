@@ -63,7 +63,9 @@ angular.module('core9Dashboard.commerce.paymentmethods', [
   };
 })
 
-.controller("CommercePaymentMethodEditCtrl", function ($scope, $state, method) {
+.controller("CommercePaymentMethodEditCtrl", function ($scope, $state, ConfigFactory, method) {
+  $scope.widgets = ConfigFactory.query({configtype: 'widget'});
+
   $scope.method = method;
   $scope.save = function() {
     $scope.method.$update(function(data) {
